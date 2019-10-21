@@ -1,0 +1,20 @@
+<%= form_with(model: @note, local: true) do |note| %>
+
+
+<h1>Edytuj notatkę</h1>
+
+<p>
+	<%= note.label :title %>
+	<%= note.text_field :title %>
+</p>
+
+<p>
+	<%= note.label :memo %>
+	<%= note.text_field :memo %>
+</p>
+
+<p>
+	<%= note.submit 'Zapisz' %>
+</p>
+
+<% end %>

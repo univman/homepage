@@ -1,0 +1,24 @@
+<h1>Lista notatek</h1>
+
+<%= link_to 'Nowa notatka', new_note_path %><br>
+
+<table>
+	<tr>
+		<th>Tytuł</th>
+		<th>Treść</th>
+		<th colspan="2"></th>
+	</tr>
+
+	<% @note.each do |note| %>
+	<tr>
+		<td><%= note.title %></td>
+		<td><%= note.memo %></td>
+		<td><%= link_to 'Wyświetl', note_path(note) %></td>
+		<td><%= link_to 'Edytuj', edit_note_path(note) %></td>
+	</tr>
+
+	<% end %>
+</table>
+
+<br>
+<%= link_to 'Homepage', home_index_path %>
